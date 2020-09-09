@@ -26,8 +26,8 @@ interface TaskDao {
     fun getAllTaskFromDb(): LiveData<List<Task>>
 
     // Busca un elemento por ID
-    @Query("SELECT * FROM table_task WHERE id =:mId")
-    fun getOneTaskByID(mId: Int): Task
+    @Query("SELECT  * FROM table_task WHERE task = :mId")
+    fun getOneTaskByID(mId: Int): LiveData<Task>
 
     @Query("DELETE  FROM table_task")
     suspend fun deleteAllTask()

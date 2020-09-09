@@ -34,7 +34,6 @@ class FirstFragment : Fragment() , TaskAdapter.PassTheData {
     ): View? {
         // Inflate the layout for this fragment
 
-
         return inflater.inflate(R.layout.fragment_first, container, false)
     }
 
@@ -63,5 +62,9 @@ class FirstFragment : Fragment() , TaskAdapter.PassTheData {
 
     override fun passTheData(mtask: Task) {
         Toast.makeText(context, mtask.task, Toast.LENGTH_LONG).show()
+        val bundle = Bundle()
+        bundle.putInt("id", mtask.id)
+        Log.d("OBJ-pass", mtask.id.toString())
+        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment , bundle)
     }
 }

@@ -38,7 +38,7 @@ class TaskAdapter(var mPassTheData: PassTheData) : RecyclerView.Adapter<TaskAdap
         val mTask: Task = dataList[position]
         holder.taskText.text = mTask.task
         holder.checkTask.isChecked = mTask.completeTask
-        holder.idText.text = mTask.id.toString()
+        //holder.idText.text = mTask.id.toString()
     }
 
     override fun getItemCount() = dataList.size
